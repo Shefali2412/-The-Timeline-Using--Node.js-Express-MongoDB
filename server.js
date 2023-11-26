@@ -9,7 +9,7 @@ const app = express();
 // Connect to MongoDB database
 mongoose.connect('mongodb+srv://shefalijohnson98:5wQEO129ndZATXjT@post.8uqdnnn.mongodb.net/posts?retryWrites=true&w=majority');
 
-// Serve static files (CSS, JS, etc.) from the public directory
+// Serve static files (CSS, JS) from the public directory
 app.use(express.static('public'));
 
 // Parse JSON and handle URL-encoded form data

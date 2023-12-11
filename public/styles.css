@@ -1,0 +1,34 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  footer {
+    background-color: #343a40;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  #auth-form {
+    margin-top: 50px;
+  }
+  
+.result {
+  color: red;
+}
+.success {
+  color: green;
+}
+
+  /* Adjust margin for small screens */
+  @media (max-width: 576px) {
+    #auth-form {
+      margin-top: 20px;
+    }
+  }

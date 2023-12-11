@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Timeline</h1>
+  </header>
+
+  <form action="/logout" method="get">
+    <button>logout</button>
+  </form>
+
+  <div id="post-form">
+    <h2>Create a New Post</h2>
+    <form action="/posts" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="message">Message:</label>
+      <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+
+      <button type="submit">Post</button>
+    </form>
+    <% if (err) { %>
+      <p id="error"><%= err %></p>
+    <% } %>
+  </div>
+  
+  <main>
+    <h2>All Posts</h2>
+    <ul id="post-list">
+      <% for (const post of posts) { %>
+        <li>
+          <b><%= post.name %></b> 
+          <br>
+          <p><%= post.createdAt%></p>
+          <br>
+          <p><%= post.message %></p>
+        </li>
+    
+    </ul>
+
+     <!-- Comment Section -->
+  <ul>
+    <% post.comments.forEach(comment => { %>
+      <li><%= comment.comment %></li>
+    <% }) %>
+  </ul>
+
+   <!-- Add Comment Form -->
+   <form action="/posts/<%= post._id %>/create-comment" method="post">
+    <label for="comment">Add Comment:</label>
+    <input type="text" id="comment" name="comment" required>
+    <button type="submit">Comment</button>
+  </form>
+</li>
+<% } %>
+</ul>
+</main>
+  </main>
+
+
+  
+ 
+
+ 
+
+</body>
+</html>
+
